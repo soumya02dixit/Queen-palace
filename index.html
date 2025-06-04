@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queens Palace Beauty Salon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .blink {
+      animation: blink-animation 1.5s steps(5, start) infinite;
+      -webkit-animation: blink-animation 1.5s steps(5, start) infinite;
+    }
+    @keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+    @-webkit-keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+  </style>
+</head>
+<body class="bg-pink-50 text-pink-900 font-sans relative overflow-x-hidden">
+
+    <!-- Popping Dots Background -->
+    <div class="fixed inset-0 -z-10 pointer-events-none">
+      <div class="absolute" style="top:10%; left:15%;">
+        <span class="dot-pop bg-pink-200"></span>
+      </div>
+      <div class="absolute" style="top:30%; left:70%;">
+        <span class="dot-pop bg-pink-300"></span>
+      </div>
+      <div class="absolute" style="top:60%; left:40%;">
+        <span class="dot-pop bg-pink-400"></span>
+      </div>
+      <div class="absolute" style="top:80%; left:80%;">
+        <span class="dot-pop bg-pink-100"></span>
+      </div>
+      <div class="absolute" style="top:50%; left:20%;">
+        <span class="dot-pop bg-pink-300"></span>
+      </div>
+      <div class="absolute" style="top:75%; left:10%;">
+        <span class="dot-pop bg-pink-200"></span>
+      </div>
+      <!-- Add more dots as desired -->
+    </div>
+    <style>
+      .dot-pop {
+        display: block;
+        width: 28px;
+        height: 28px;
+        border-radius: 9999px;
+        opacity: 0.5;
+        animation: pop 2.5s infinite cubic-bezier(.68,-0.55,.27,1.55);
+        box-shadow: 0 0 16px 2px #f9a8d4, 0 0 0 0 #fff;
+      }
+      .dot-pop:nth-child(2) { animation-delay: .5s; }
+      .dot-pop:nth-child(3) { animation-delay: 1s; }
+      .dot-pop:nth-child(4) { animation-delay: 1.5s; }
+      .dot-pop:nth-child(5) { animation-delay: 2s; }
+      .dot-pop:nth-child(6) { animation-delay: 2.3s; }
+      @keyframes pop {
+        0%, 100% { transform: scale(1); opacity: 0.5;}
+        50% { transform: scale(1.7); opacity: 0.8;}
+      }
+    </style>
+  
+    
+  
+
+  <!-- Special Discount Pop-up -->
+  <div id="discountPop" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg shadow-lg p-6 sm:p-8 max-w-xs sm:max-w-sm text-center relative border-4 border-pink-400">
+      <button id="closePop" class="absolute top-2 right-2 text-pink-600 text-2xl font-bold">&times;</button>
+      <h3 class="text-2xl font-bold mb-2 text-pink-700">🎉 Special Offer!</h3>
+      <p class="mb-4 text-pink-800 text-sm sm:text-base">First-Time Clients: <span class="font-bold">10% OFF</span> your first service!</p>
+      <p class="mb-4 text-pink-800 text-sm sm:text-base">Refer a Friend: <span class="font-bold">$10 OFF</span> for both of you!</p>
+      <button onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})" class="bg-pink-700 hover:bg-pink-900 text-white font-bold py-2 px-4 rounded blink mt-2">Book Now</button>
+    </div>
+  </div>
+
+  
+  <!-- Hero Section -->
+  <section 
+    class="relative min-h-[80vh] sm:min-h-[70vh] flex items-center justify-center overflow-hidden"
+    style="background-image: url('images/apsara-s-aroma-beauty-care-tuticorin-ho-thoothukudi-beauty-parlours-zpaks5hihv.avif'); background-size: cover; background-position: center; background-attachment: scroll; background-repeat: no-repeat; width: 100%;"
+  >
+    <div class="absolute inset-0 bg-pink-900 bg-opacity-60"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 py-16 w-full">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 drop-shadow-lg">Welcome to Queens Palace</h1>
+      <p class="text-base sm:text-xl md:text-2xl text-pink-100 max-w-2xl mb-8 sm:mb-10 drop-shadow-lg">
+        Where beauty meets professionalism in the heart of Fort Wayne, Indiana. Step into a vibrant, welcoming space designed for women to relax, connect, and shine.
+      </p>
+      <button id="heroBookBtn" class="blink bg-pink-700 hover:bg-pink-900 text-white font-bold py-3 px-6 sm:py-4 sm:px-10 rounded shadow-lg transition duration-300 text-base sm:text-lg">
+        Book Now
+      </button>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="p-4 sm:p-8 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
+    <div class="w-full md:w-1/2 mb-6 md:mb-0">
+      <img src="images/476881445_1181680767294850_6817389297131076577_n.jpg" alt="Salon Interior" class="rounded-xl shadow-lg w-full h-56 sm:h-80 object-cover border-4 border-pink-100">
+    </div>
+    <div class="w-full md:w-1/2">
+      <h2 class="text-2xl sm:text-3xl font-semibold mb-4">About Us</h2>
+      <p class="mb-4 text-sm sm:text-base">Queens Palace is more than just a salon—it's a hub for empowerment and self-expression. Owned and operated by a passionate professional, our salon is known for its cleanliness, thoughtful layout, and warm hospitality. We take pride in making every guest feel special, offering a space where you can not only enhance your look but also network and share your own business on our community bulletin board.</p>
+      <blockquote class="border-l-4 border-pink-700 pl-4 italic text-pink-800 text-sm sm:text-base">The owner was so nice and professional! Her business was definitely clean and well thought out. This place is perfect for women to meet up, get their hair done and share their businesses on the bulletin board.<br>— Customer Review</blockquote>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-pink-100 py-12 px-2 sm:px-4">
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-10 text-center text-pink-900">Our Services</h2>
+    <div id="servicesCarousel" class="max-w-6xl mx-auto flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8">
+      <!-- Service Cards -->
+      <div class="service-card group bg-white rounded-3xl shadow-lg transition-transform duration-500 ease-in-out w-full sm:w-72 p-6 sm:p-8 border-2 border-transparent mx-auto">
+        <div class="bg-gradient-to-tr from-pink-200 to-pink-400 rounded-full p-3 sm:p-4 mb-4 shadow-md flex justify-center">
+          <img src="https://img.icons8.com/?size=100&id=jip2zi9l0Nji&format=png&color=000000" alt="Braids Icon" class="w-10 h-10 sm:w-12 sm:h-12" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-pink-800 mb-2 text-center">Braids</h3>
+        <p class="text-pink-700 mb-4 text-center text-sm sm:text-base">Protective and stylish, perfect for any occasion.</p>
+        <span class="inline-block bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base">From $100</span>
+      </div>
+      <div class="service-card group bg-white rounded-3xl shadow-lg transition-transform duration-500 ease-in-out w-full sm:w-72 p-6 sm:p-8 border-2 border-transparent mx-auto">
+        <div class="bg-gradient-to-tr from-pink-200 to-pink-400 rounded-full p-3 sm:p-4 mb-4 shadow-md flex justify-center">
+          <img src="https://img.icons8.com/ios-filled/50/000000/shampoo.png" alt="Shampoo Icon" class="w-10 h-10 sm:w-12 sm:h-12" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-pink-800 mb-2 text-center">Shampoo & Conditioning</h3>
+        <p class="text-pink-700 mb-4 text-center text-sm sm:text-base">Deep cleansing and nourishing treatments for healthy hair.</p>
+        <span class="inline-block bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base">From $100</span>
+      </div>
+      <div class="service-card group bg-white rounded-3xl shadow-lg transition-transform duration-500 ease-in-out w-full sm:w-72 p-6 sm:p-8 border-2 border-transparent mx-auto">
+        <div class="bg-gradient-to-tr from-pink-200 to-pink-400 rounded-full p-3 sm:p-4 mb-4 shadow-md flex justify-center">
+          <img src="https://img.icons8.com/?size=100&id=oN0Cs0XVnTWo&format=png&color=000000" alt="Dreadlocks Icon" class="w-10 h-10 sm:w-12 sm:h-12" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-pink-800 mb-2 text-center">Dreadlocks</h3>
+        <p class="text-pink-700 mb-4 text-center text-sm sm:text-base">Expertly crafted and maintained for a bold look.</p>
+        <span class="inline-block bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base">From $100</span>
+      </div>
+      <div class="service-card group bg-white rounded-3xl shadow-lg transition-transform duration-500 ease-in-out w-full sm:w-72 p-6 sm:p-8 border-2 border-transparent mx-auto">
+        <div class="bg-gradient-to-tr from-pink-200 to-pink-400 rounded-full p-3 sm:p-4 mb-4 shadow-md flex justify-center">
+          <img src="https://img.icons8.com/?size=100&id=XDvCuxrZk3ed&format=png&color=000000" alt="Makeup Icon" class="w-10 h-10 sm:w-12 sm:h-12" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-pink-800 mb-2 text-center">Makeup</h3>
+        <p class="text-pink-700 mb-4 text-center text-sm sm:text-base">Flawless looks for any event or everyday confidence.</p>
+        <span class="inline-block bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base">From $100</span>
+      </div>
+      <div class="service-card group bg-white rounded-3xl shadow-lg transition-transform duration-500 ease-in-out w-full sm:w-72 p-6 sm:p-8 border-2 border-transparent mx-auto">
+        <div class="bg-gradient-to-tr from-pink-200 to-pink-400 rounded-full p-3 sm:p-4 mb-4 shadow-md flex justify-center">
+          <img src="https://img.icons8.com/?size=100&id=eG53NJpUI3Zi&format=png&color=000000" alt="Massage Icon" class="w-10 h-10 sm:w-12 sm:h-12" />
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-pink-800 mb-2 text-center">Massage</h3>
+        <p class="text-pink-700 mb-4 text-center text-sm sm:text-base">Relax and rejuvenate with our soothing massage therapy.</p>
+        <span class="inline-block bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base">From $100</span>
+      </div>
+    </div>
+  </section>
+  <script>
+    const cards = document.querySelectorAll('.service-card');
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    function updateCarousel() {
+      cards.forEach((card, index) => {
+        card.style.transform = 'scale(0.95)';
+        card.style.zIndex = '0';
+        card.style.opacity = '0.7';
+        card.style.filter = 'brightness(0.9)';
+        card.style.transition = 'transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease';
+      });
+      const currentCard = cards[currentIndex];
+      currentCard.style.transform = 'scale(1.05)';
+      currentCard.style.zIndex = '10';
+      currentCard.style.opacity = '1';
+      currentCard.style.filter = 'brightness(1)';
+    }
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % totalCards;
+      updateCarousel();
+    }
+    updateCarousel();
+    setInterval(nextCard, 2000);
+  </script>
+
+  <!-- Prices Section -->
+  <section class="bg-pink-50 py-12 px-2 sm:px-4">
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-10 text-center text-pink-900">Our Prices</h2>
+    <div class="max-w-2xl mx-auto flex flex-col gap-4">
+      <!-- Braids -->
+      <div class="flex flex-col sm:flex-row items-center bg-white rounded-xl shadow-md border-l-8 border-pink-400 p-4">
+        <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center shadow mb-4 sm:mb-0 sm:mr-6">
+          <img src="images/120c51e5a88d2eb811a58e7e29e85291.jpg" alt="Braids" class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" />
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-800">Braids</h3>
+            <span class="bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base mt-2 sm:mt-0">$90–$130</span>
+          </div>
+          <p class="text-pink-700 mt-1 text-xs sm:text-sm">Protective and stylish, perfect for any occasion.</p>
+        </div>
+      </div>
+      <!-- Shampoo & Conditioning -->
+      <div class="flex flex-col sm:flex-row items-center bg-white rounded-xl shadow-md border-l-8 border-pink-400 p-4">
+        <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center shadow mb-4 sm:mb-0 sm:mr-6">
+          <img src="images/istockphoto-516981844-612x612.jpg" alt="Shampoo & Conditioning" class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" />
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-800">Shampoo & Conditioning</h3>
+            <span class="bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base mt-2 sm:mt-0">$80–$110</span>
+          </div>
+          <p class="text-pink-700 mt-1 text-xs sm:text-sm">Deep cleansing and nourishing treatments for healthy hair.</p>
+        </div>
+      </div>
+      <!-- Dreadlocks -->
+      <div class="flex flex-col sm:flex-row items-center bg-white rounded-xl shadow-md border-l-8 border-pink-400 p-4">
+        <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center shadow mb-4 sm:mb-0 sm:mr-6">
+          <img src="images/Braided-Dreadlocks.jpg" alt="Dreadlocks" class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" />
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-800">Dreadlocks</h3>
+            <span class="bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base mt-2 sm:mt-0">$100–$140</span>
+          </div>
+          <p class="text-pink-700 mt-1 text-xs sm:text-sm">Expertly crafted and maintained for a bold look.</p>
+        </div>
+      </div>
+      <!-- Makeup -->
+      <div class="flex flex-col sm:flex-row items-center bg-white rounded-xl shadow-md border-l-8 border-pink-400 p-4">
+        <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center shadow mb-4 sm:mb-0 sm:mr-6">
+          <img src="images/70157b4f2e018a697b388907f8a0891f.jpg" alt="Makeup" class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" />
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-800">Makeup</h3>
+            <span class="bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base mt-2 sm:mt-0">$70–$120</span>
+          </div>
+          <p class="text-pink-700 mt-1 text-xs sm:text-sm">Flawless looks for any event or everyday confidence.</p>
+        </div>
+      </div>
+      <!-- Massage -->
+      <div class="flex flex-col sm:flex-row items-center bg-white rounded-xl shadow-md border-l-8 border-pink-400 p-4">
+        <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-pink-400 bg-opacity-30 flex items-center justify-center shadow mb-4 sm:mb-0 sm:mr-6">
+          <img src="images/woman-massagist-make-body-massage-spa-wellness-center-women-patient-aroma-professional-face-to-beautiful-girl-77304560.webp" alt="Massage" class="w-10 h-10 sm:w-12 sm:h-12 object-cover rounded-full" />
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <div class="flex flex-col sm:flex-row items-center justify-between">
+            <h3 class="text-lg sm:text-xl font-bold text-pink-800">Massage</h3>
+            <span class="bg-pink-200 text-pink-900 font-semibold px-4 py-1 rounded-full text-sm sm:text-base mt-2 sm:mt-0">$60–$100</span>
+          </div>
+          <p class="text-pink-700 mt-1 text-xs sm:text-sm">Relax and rejuvenate with our soothing massage therapy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="bg-pink-100 py-12 px-2 sm:px-4">
+    <h2 class="text-2xl sm:text-3xl font-semibold mb-8 sm:mb-10 text-center text-pink-900">Customer Reviews</h2>
+    <div class="max-w-xl mx-auto">
+      <div id="reviewCard" class="bg-white rounded-2xl shadow-lg border-l-8 border-pink-400 p-6 sm:p-8 text-center transition-opacity duration-300 opacity-100">
+        <!-- Review content will be injected here -->
+      </div>
+    </div>
+  </section>
+  <script>
+    // Review data
+    const reviews = [
+      {
+        text: "Queen done amazing job thank you luv, ur the best!",
+        author: "Dice Therenegade"
+      },
+      {
+        text: "My go to spot for my crochet styles❤️",
+        author: "Dasha Fuqua"
+      },
+      {
+        text: "That's the place to go, great energy.",
+        author: "Shaquille"
+      },
+      {
+        text: "The owner was so nice and professional! Her business was definitely clean and well thought out. This place is perfect for women to meet up, get their hair done and share their businesses on the bulletin board. The owner took the time out to greet me, share her business card and welcomed me to come again which is rare to find these days.",
+        author: "Nikki Williams"
+      }
+    ];
+    let current = 0;
+    const reviewCard = document.getElementById('reviewCard');
+    function showReview(index) {
+      reviewCard.innerHTML = `
+        <p class="italic text-base sm:text-lg text-pink-800 mb-4 transition-all duration-300">"${reviews[index].text}"</p>
+        <div class="mt-2 text-sm sm:text-base text-pink-600 font-bold">— ${reviews[index].author}</div>
+      `;
+    }
+    function nextReview() {
+      reviewCard.classList.remove('opacity-100');
+      reviewCard.classList.add('opacity-0');
+      setTimeout(() => {
+        current = (current + 1) % reviews.length;
+        showReview(current);
+        reviewCard.classList.remove('opacity-0');
+        reviewCard.classList.add('opacity-100');
+      }, 250);
+    }
+    showReview(current);
+    setInterval(nextReview, 1800);
+  </script>
+
+  <!-- Booking & Contact Section -->
+  <section 
+    id="booking"
+    class="relative py-12 px-2 sm:px-4"
+    style="background-image: url('images/different-cosmetics-types-scattered-pink-table_23-2148046961.avif'); background-size: cover; background-position: center;"
+  >
+    <div class="absolute inset-0 bg-pink-900 bg-opacity-70"></div>
+    <div class="relative z-10 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+      <!-- Booking Form -->
+      <div class="bg-white bg-opacity-90 rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-pink-700 mb-4">Book Your Appointment</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-pink-900 font-semibold mb-1" for="name">Name</label>
+            <input class="w-full px-4 py-2 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400" type="text" id="name" placeholder="Your Name" required>
+          </div>
+          <div>
+            <label class="block text-pink-900 font-semibold mb-1" for="email">Email</label>
+            <input class="w-full px-4 py-2 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400" type="email" id="email" placeholder="you@email.com" required>
+          </div>
+          <div>
+            <label class="block text-pink-900 font-semibold mb-1" for="service">Service</label>
+            <select class="w-full px-4 py-2 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400" id="service" required>
+              <option value="">Select a Service</option>
+              <option>Braids</option>
+              <option>Shampoo & Conditioning</option>
+              <option>Dreadlocks</option>
+              <option>Makeup</option>
+              <option>Massage</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-pink-900 font-semibold mb-1" for="date">Preferred Date</label>
+            <input class="w-full px-4 py-2 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400" type="date" id="date" required>
+          </div>
+          <button type="submit" class="w-full bg-pink-700 hover:bg-pink-900 text-white font-bold py-3 rounded-lg transition duration-300 mt-2">
+            Book Now
+          </button>
+        </form>
+      </div>
+      <!-- Contact Info -->
+      <div class="bg-white bg-opacity-90 rounded-3xl shadow-lg p-6 sm:p-8 flex flex-col justify-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-pink-700 mb-4">Contact Us</h2>
+        <div class="space-y-4 text-pink-900 text-sm sm:text-base">
+          <div>
+            <span class="font-semibold">Address:</span><br>
+            3214 E. Paulding Rd,<br>
+            Fort Wayne, IN, United States, Indiana
+          </div>
+          <div>
+            <span class="font-semibold">Phone:</span><br>
+            <a href="tel:+12603107172" class="text-pink-700 hover:underline">+1 260-310-7172</a>
+          </div>
+          <div>
+            <span class="font-semibold">Email:</span><br>
+            <a href="mailto:queenspalace3214@gmail.com" class="text-pink-700 hover:underline">queenspalace3214@gmail.com</a>
+          </div>
+          <div>
+            <span class="font-semibold">Hours:</span><br>
+            Open now
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-pink-300 p-4 text-center text-pink-900 text-xs sm:text-base">
+    Queens Palace Beauty Salon<br>
+    3214 E. Paulding Rd, Fort Wayne, IN<br>
+    +1 260-310-7172 | queenspalace3214@gmail.com<br>
+    Follow us on social media for the latest updates and offers.<br>
+    &copy; 2025 Queens Palace. All rights reserved.
+  </footer>
+
+  <script>
+    // Show discount popup on load
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('discountPop').classList.remove('hidden');
+      }, 1200);
+    };
+    document.getElementById('closePop').onclick = function() {
+      document.getElementById('discountPop').classList.add('hidden');
+    };
+    // Smooth scroll from hero "Book Now" to booking section
+    document.getElementById('heroBookBtn').addEventListener('click', function() {
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
+
+
